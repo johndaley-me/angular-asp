@@ -1,0 +1,13 @@
+{
+  "name": "PoetryHub",
+  "version": "0.0.0",
+  "description": "Sample AngularJS, ASP.NET Web app",
+  "license": "MIT",
+  "homepage": "https://github.com/johndaley-me/angular-asp",
+  "private":  true,
+  "dependencies": {
+    "bootswatch": "3.2.0+2",
+    "angular-loading-bar": "johndaley-me/angular-loading-bar",
+    "trNgGrid": "MoonStorm/trNgGrid#3.0.3"
+  }
+}

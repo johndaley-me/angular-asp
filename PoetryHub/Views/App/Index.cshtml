@@ -1,0 +1,34 @@
+﻿@{
+    ViewBag.Title = "Poetry Hub";
+}
+
+<div id="splash-page" data-ng-if="false">
+    @* We use the regular _Home for the splash AND as an AngularJS template
+        so that we can double dip for the app and SEO for robots *@
+    @Html.Partial("_Home")
+</div>
+
+<div class="view-container">
+    <div data-ng-view class="shuffle-animation"></div>
+</div>
+
+@section scripts {
+
+    <script src="@Url.DebugReplace("//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js", "/Scripts/jquery-2.1.1.js")"></script>
+
+    <script src="@Url.DebugReplace("//ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js", "/Scripts/angular.js")"></script>
+    <script src="@Url.DebugReplace("//ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular-route.min.js", "/Scripts/angular-route.js")"></script>
+    <script src="@Url.DebugReplace("//ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular-sanitize.min.js", "/Scripts/angular-sanitize.js")"></script>
+    <script src="@Url.DebugReplace("//ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular-animate.min.js", "/Scripts/angular-animate.js")"></script>
+    <script src="@Url.DebugReplace("//ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular-resource.min.js", "/Scripts/angular-resource.js")"></script>
+
+    <script src="@Url.DebugReplace("//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.11.0/ui-bootstrap-tpls.min.js", "/Scripts/angular-ui/ui-bootstrap-tpls.js")"></script>
+
+    <script src="@Url.DebugReplace("//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js", "/Scripts/bootstrap.js")"></script>
+
+    <script src="@Url.DebugReplace("//cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.3/js/toastr.min.js", "/Scripts/toastr.js")"></script>
+
+    @Scripts.Render("~/bundles/lib")
+
+    @Scripts.Render("~/bundles/app")
+}

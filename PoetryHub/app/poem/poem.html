@@ -1,0 +1,19 @@
+﻿<div class="container-fluid">
+    <br />
+    <div class="row">
+        <div class="col-lg-6 col-lg-offset-3">
+            <h1 class="page-header">
+                {{ vm.poem.Title }}
+            </h1>
+            <ul class="list-inline">
+                <li><b>Author:</b> {{ vm.poem.Author }}</li>
+                <li><b>Published:</b> {{ vm.poem.LastModified | date }}</li>
+            </ul>
+            <hr />
+            <p class="keep-white-space">{{ vm.poem.Content }}</p>
+            <br />
+        </div>
+    </div>
+</div>
+
+

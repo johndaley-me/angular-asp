@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <title>@ViewBag.Title</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" /> @* Has to come right after the title: http://stackoverflow.com/questions/6156639/x-ua-compatible-is-set-to-ie-edge-but-it-still-doesnt-stop-compatibility-mode *@
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="@Url.DebugReplace("//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css",
+        "/Content/font-awesome.min.css")" />
+
+    @*lumen, spacelab could work or possibly yeti*@
+    <link rel="stylesheet" href="@Url.DebugReplace("//maxcdn.bootstrapcdn.com/bootswatch/3.2.0/cosmo/bootstrap.min.css",
+        "/bower_components/bootswatch/cosmo/bootstrap.min.css")" />
+
+    <link href="@Url.DebugReplace("//cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.3/css/toastr.css",
+        "/Content/toastr.min.css")" rel="stylesheet" />
+
+    @Styles.Render("~/Content/css")
+
+</head>
+<body class="wrap">
+    <!--[if lt IE 10]><div class="alert alert-danger"><a class="alert-link" href="http://browsehappy.com/">Your browser is not supported. This site works best in a modern browser such as Google Chrome. Click here to upgrade.</a></div><![endif]-->
+
+    <nav class="navbar navbar-default navbar-static-top" role="navigation">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="/">
+                            <img alt="Application logo" src="/logo.svg" height="24" /> Poetry Hub
+                        </a>
+                    </div>
+                    <div data-rr-nav></div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    @RenderBody()
+
+    <footer role="contentinfo">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12">
+                    <br />
+                    <p class="text-muted text-center">
+                        <small>
+                            <a href="https://github.com/johndaley-me/angular-asp" target="_blank" title="Github Project">Github Project: johndaley-me/angular-asp</a>
+                        </small>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    @RenderSection("scripts", required: false)
+</body>
+</html>

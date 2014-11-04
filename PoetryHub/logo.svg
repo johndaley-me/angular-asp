@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   width="14"
+   height="14"
+   viewBox="0 0 14 14"
+   id="svg2"
+   inkscape:version="0.48.5 r10040"
+   sodipodi:docname="logo.svg">
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1058"
+     id="namedview18"
+     showgrid="false"
+     inkscape:zoom="16.857143"
+     inkscape:cx="7"
+     inkscape:cy="7"
+     inkscape:window-x="1912"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg2" />
+  <metadata
+     id="metadata115">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs113" />
+  <path
+     sodipodi:type="star"
+     style="fill:#a3c54b;fill-opacity:1"
+     id="path2995"
+     sodipodi:sides="5"
+     sodipodi:cx="3.737288"
+     sodipodi:cy="3.618644"
+     sodipodi:r1="6.0488114"
+     sodipodi:r2="3.0244057"
+     sodipodi:arg1="0.46803355"
+     sodipodi:arg2="1.0963521"
+     inkscape:flatsided="false"
+     inkscape:rounded="0"
+     inkscape:randomized="0"
+     d="M 9.135593,6.3474575 5.11897,6.3089943 2.8102001,9.5959869 1.605576,5.7640656 -2.2339888,4.5840315 1.0381355,2.2542372 0.97392389,-1.7620566 4.200832,0.62997257 8.0007119,-0.67219936 6.7229264,3.1359503 z"
+     inkscape:transform-center-x="0.28648592"
+     inkscape:transform-center-y="0.29832117"
+     transform="translate(3.440678,3.0847458)" />
+</svg>

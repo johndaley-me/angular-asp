@@ -1,0 +1,227 @@
+﻿/* Always point even if href is not present */
+a {
+    cursor: pointer;
+}
+
+.clickable {
+    cursor: pointer;
+}
+
+.keep-white-space {
+    white-space: pre-wrap;
+    -ms-word-wrap: break-word;
+    word-wrap: break-word;
+}
+
+/* word-wrap is standard but also need word-break to get URLs inside thumbnails to work */
+.wrap {
+    -ms-word-wrap: break-word;
+    word-wrap: break-word;
+}
+
+td, th {
+    max-width: 10em; /* keeps the table from going outside the panel for Nexus 7 - have to remove columns somehow for xs */
+}
+
+/* 767 and below is Bootstarp xs device. Could do About Nexus 7 width (604) but might get sloppy on some devices. */
+@media ( max-width: 767px ) {
+
+    td, th {
+        display: none;
+    }
+
+    td:first-child,
+    th:first-child,
+    td:last-child,
+    th:last-child {
+        display: table-cell;
+        max-width: 12em; /* buttons still look good on Samsung S3 but Title has a little more room */
+    }
+
+}
+
+/* Rearrange sizes on nav, nav a and jumbotron so that displaying images works well and fixed navbar looks rightr*/
+.navbar {
+    margin-bottom: 0; /* comment out when using fixed navbar */
+    min-height: 53px;
+}
+
+.navbar-nav > li > a {
+    line-height: 23px; /*make this bigger than the profile pic height*/
+}
+
+.jumbotron-no-gap {
+    /*padding-top: 53px; used this for fixed navbar on body tag*/
+}
+
+/* Modifications used depending on the style */
+.jumbotron {
+    margin-top: -20px; /* use negative margin when using lumen to avoid extra shadow */
+}
+
+/* Fix the footer when in view */
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    /* Match the footer height or a hair extra height */
+    margin-bottom: 80px;
+}
+
+.rr-view-background {
+    background: url(/logo.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: maroon;
+    /*background-position: 50px 100px;*/
+}
+
+.rr-view {
+    margin-top: 20px;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 60px;
+    background-color: #f5f5f5;
+}
+
+.well hr {
+    border-color: #1F1F2E;
+    border-width: 1px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.dl-large dt {
+    font-size: 18px;
+    /*margin-bottom: 6px;*/
+    margin-top: 12px;
+}
+
+.dl-large dd {
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+
+.legal ul li {
+    list-style: none;
+}
+
+    .legal ul li span {
+        position: absolute;
+        left: 15px;
+    }
+
+/* http://stackoverflow.com/questions/11235206/twitter-bootstrap-form-file-element-upload-button */
+/* other userful link here http://viget.com/inspire/custom-file-inputs-with-a-bit-of-jquery */
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+
+    .btn-file input[type=file] {
+        position: absolute;
+        top: 0;
+        right: 0;
+        min-width: 100%;
+        min-height: 100%;
+        font-size: 100px;
+        text-align: right;
+        filter: alpha(opacity=0);
+        opacity: 0;
+        outline: none;
+        background: white;
+        cursor: inherit;
+        display: block;
+    }
+
+/*#region Angular ng-include, ng-view, ng-repeat shuffle animations */
+
+.shuffle-animation.ng-enter,
+.shuffle-animation.ng-leave {
+    position: relative;
+}
+
+.shuffle-animation.ng-enter {
+    -moz-transition: ease-out all 0.3s 0.4s;
+    -o-transition: ease-out all 0.3s 0.4s;
+    -webkit-transition: ease-out all 0.3s 0.4s;
+    transition: ease-out all 0.3s 0.4s;
+    /*bottom: 2em;*/
+    opacity: 0;
+}
+
+    .shuffle-animation.ng-enter.ng-enter-active {
+        /*bottom: 0;*/
+        opacity: 1;
+    }
+
+.shuffle-animation.ng-leave {
+    -moz-transition: 0.1s ease-out all;
+    -o-transition: 0.1s ease-out all;
+    -webkit-transition: 0.1s ease-out all;
+    transition: 0.1s ease-out all;
+    /*bottom: 0;*/
+    opacity: 1;
+}
+
+    .shuffle-animation.ng-leave.ng-leave-active {
+        /*bottom: 2em;*/
+        opacity: 0;
+    }
+/*#endregion*/
+
+/* http://demosthenes.info/blog/825/Pinterest-Style-Layout-In-Pure-CSS but can't use the column-break-inside
+    display-inline trick because long words or urls will cause overflow
+*/
+.columns {
+    -moz-column-width: 280px;
+    -webkit-column-width: 280px;
+    column-width: 280px;
+    -moz-column-gap: 5px;
+    -webkit-column-gap: 5px;
+    column-gap: 5px;
+    width: 100%;
+    /*max-width: 1100px;*/
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+    .columns figure {
+        background: #f5f5f5;
+        border: 1px solid #e3e3e3;
+        border-radius: 4px;
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
+        margin: 0 auto 5px 0;
+        padding: 15px;
+        padding-bottom: 10px;
+        page-break-inside: avoid; /* Mozilla */
+        -webkit-column-break-inside: avoid; /* Chrome */
+        column-break-inside: avoid; /* not supported but the proper way */
+        -webkit-break-inside: avoid-column; /* Safari */
+        break-inside: avoid-column; /* IE */
+    }
+
+        .columns figure > img {
+            width: 100%;
+            height: auto;
+            /*border-bottom: 1px solid #ccc;*/
+            /*padding-bottom: 15px;*/
+            /*margin-bottom: 5px;*/
+        }
+
+        .columns figure figcaption {
+            /*display: inline-block;*/
+            /*width: 100%;*/
+            /*-ms-word-wrap: break-word;*/
+            /*word-wrap: break-word;*/
+            /*word-break: break-all;*/
+        }

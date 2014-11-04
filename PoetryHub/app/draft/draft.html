@@ -1,0 +1,25 @@
+﻿<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2">
+            <h1>{{ vm.draft.Title }}</h1>
+            <h4>Draft created by {{ vm.draft.Author }}</h4>
+            <hr />
+            <div class="form-group">
+                <label for="draftTitle">Title</label>
+                <input maxlength="500" type="text" class="form-control" id="draftTitle" placeholder="Untitled" required ng-model="vm.draft.Title" ng-change="vm.postPropertyChange('Title')">
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <div class="btn-toolbar" role="toolbar">
+                        <div ng-include="'/app/draft/draft-toolbar.html'"></div>
+                    </div>
+
+                </div>
+                <textarea maxlength="2000" id="textarea-content" class="form-control" style="border: none;" placeholder="Write your poem here" rows="32" ng-model="vm.draft.Content" ng-change="vm.postEdit()"></textarea>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

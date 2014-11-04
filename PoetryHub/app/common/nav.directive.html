@@ -1,0 +1,15 @@
+﻿<div class="collapse navbar-collapse">
+    <ul class="nav navbar-nav" data-ng-if="vm.loggedIn">
+        <li data-ng-class="vm.isActive(r)" data-ng-repeat="r in vm.navRoutes">
+            <a data-ng-href="{{r.url}}" data-ng-bind-html="r.config.settings.content"></a>
+        </li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right dropdown" data-ng-show="vm.loggedIn">
+        <li>
+            <a class="dropdown-toggle"><img src="/unknown.png" width="22" height="22" class="img-circle"> {{vm.firstName}} <i class="fa fa-cog fa-lg"></i></a>
+        </li>
+        <ul class="dropdown-menu">
+            <li><a ng-click="vm.logout()" title=""><i class="fa fa-sign-out fa-fw"></i> Log out</a></li>
+        </ul>
+    </ul>
+</div>

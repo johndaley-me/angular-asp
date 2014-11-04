@@ -1,0 +1,92 @@
+﻿<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-10 col-lg-offset-1">
+            <br />
+            <!-- #region Poem View Radio  -->
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="btn-group pull-right">
+                        <label class="btn btn-primary" data-ng-model="vm.tab.index" data-btn-radio=1>
+                            <i class="fa fa-sort-numeric-desc fa-lg fa-fw"></i>
+                            <span class="hidden-xs">Feed</span>
+                        </label>
+                        <label class="btn btn-primary" data-ng-model="vm.tab.index" data-btn-radio=2>
+                            <i class="fa fa-table fa-lg fa-fw"></i>
+                            <span class="hidden-xs">Table</span>
+                        </label>
+                        <label class="btn btn-primary" data-ng-model="vm.tab.index" data-btn-radio=3>
+                            <i class="fa fa-picture-o fa-lg fa-fw"></i>
+                            <span class="hidden-xs">Thumbnails</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <br />
+            <!-- #endregion -->
+            <!-- #region Latest Poems -->
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <div class="panel panel-primary" data-ng-if="vm.tab.index == 1">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">Latest Poems</h4>
+                        </div>
+                        <div class="panel-body">
+                            <div class="media clickable" data-bind="css: panelClass" data-ng-repeat="poem in vm.poems | orderBy: '-LastModified'" ng-click="vm.readPoem(poem)">
+                                <img src='/unknown.png' class="media-object img-rounded pull-left" height="50" width="50" alt="Profile Pic" />
+                                <div class="media-body">
+                                    <h4 class="media-heading">
+                                        {{ poem.Author }} – <a>{{ poem.Title }}</a> – <span class="h5 text-muted"> <em>{{ poem.LastModified | date }}</em></span>
+                                    </h4>
+                                    <span>{{ poem.Content | limitAfterLastWord }}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- #endregion -->
+            <!-- #region Table -->
+            <div data-ng-if="vm.tab.index == 2">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">Poems</div>
+                    <div class="panel-body">
+                        <table tr-ng-grid="" page-items="20" selection-mode="SingleRow" selected-items="vm.selectedPoems" order-by="'LastModified'" order-by-reverse="true" items="vm.poems">
+                            <thead>
+                                <tr>
+                                    <th field-name="Title" enable-filtering="true"></th>
+                                    <th field-name="Author" display-name="Author" enable-filtering="true"></th>
+                                    <th field-name="LastModified" display-name="Published" display-format="date" enable-filtering="true"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <button class="btn btn-xs btn-success" ng-click="vm.readPoem(gridItem)">Read</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- #endregion -->
+            <!-- #region Thumbnails -->
+            <div class="columns" data-ng-if="vm.tab.index == 3">
+                <figure class="clickable" ng-click="vm.readPoem(poem)" data-ng-repeat="poem in vm.poems | orderBy: '-LastModified'">
+                    <h3><a>{{ poem.Title }}</a></h3>
+                    <div>
+                        <p>
+                            <small>
+                                <img src="/unknown.png" height="32" width="32" class="img-rounded"> <span>{{ poem.Author }} – <em>{{ poem.LastModified | date }}</em></span>
+                            </small>
+                        </p>
+                    </div>
+                    <p>{{ poem.Content | limitAfterLastWord }}</p>
+                </figure>
+            </div>
+            <!-- #endregion -->
+        </div>
+
+    </div>
+</div>
